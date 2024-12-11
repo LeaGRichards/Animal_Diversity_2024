@@ -129,17 +129,18 @@
   par(mfrow=c(1,1))
   clock24.plot(activity_24h$Panthera.pardus, clock, show.grid=T, lwd=2, line.col="yellow", main="leopard")
 
-# naive occupancy
-mat<-f.matrix.creator(data) # list of matrices camera x days for each species
-mat
-naive_occu_2009<-naive(mat) # get naive occupancy for each species
-naive_occu_2009
-write.table(naive_occu_2009, file="naive_occu_2009.txt",quote=F, sep="\t",row.names = F)
+# Naive occupancy
+  mat <- f.matrix.creator(data) # list of matrices camera x days for each species
+  mat
+  naive_occu_2009<-naive(mat) # get naive occupancy for each species
+  naive_occu_2009
+  write.table(naive_occu_2009, file="naive_occu_2009.txt",quote=F, sep="\t",row.names = F)
 
-mat_es<-mat[["Cricetomys gambianus"]]
-mat2<-mat[["Rhynchocyon udzungwensis"]]
+  mat_es <- mat[["Cricetomys gambianus"]]
+  mat2 <- mat[["Rhynchocyon udzungwensis"]]
 
-#save mat
-mat<-save(mat, file="detection_matrix.RDATA")
-#to load it later on
-#load("detection_matrix.RDATA")
+# Save mat
+  mat <- save(mat, file="detection_matrix.RDATA")
+  
+  # to load it later on
+  # load("detection_matrix.RDATA")
